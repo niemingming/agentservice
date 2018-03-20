@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: webview
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+    contentType: text/html
+    cache: false
+server:
+  port: 9000
+service:
+  author: localhost:9001/
+  search: localhost:9002/

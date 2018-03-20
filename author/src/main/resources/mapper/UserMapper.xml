@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="UserMapper">
+    <select id="checkUser" parameterType="java.lang.String" resultType="java.lang.Long">
+      select ifnull(updateTime,-1) from Person where name = #{username}
+    </select>
+    <update id="updateUser" >
+      update Person set updateTime = #{updateTime} where name = #{username}
+    </update>
+    <insert id="addUser">
+      insert into person (name,age,password,updateTime) values(#{username},#{age},#{password},#{updateTime})
+    </insert>
+</mapper>
