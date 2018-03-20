@@ -7,8 +7,8 @@ if /i "%zt%"=="RUNNING" (
    net start MySQL
 )
 rem start webview
-start cmd /c java -jar E:\workspace\agentservices\webview\target\webview-1.0-SNAPSHOT.jar
+start cmd /c java -Dpinpoint.agentId=webview1 -Dpinpoint.applicationName=webview -javaagent:E:\workspace\apm\agent\target\pinpoint-agent-1.7.0-SNAPSHOT\pinpoint-bootstrap-1.7.0-SNAPSHOT.jar -jar E:\workspace\agentservices\webview\target\webview-1.0-SNAPSHOT.jar
 rem start author
-start cmd /c java -jar E:\workspace\agentservices\author\target\author-1.0-SNAPSHOT.jar
+start cmd /c java -Dpinpoint.agentId=author1 -Dpinpoint.applicationName=author -javaagent:E:\workspace\apm\agent\target\pinpoint-agent-1.7.0-SNAPSHOT\pinpoint-bootstrap-1.7.0-SNAPSHOT.jar -jar E:\workspace\agentservices\author\target\author-1.0-SNAPSHOT.jar
 rem start search
-start cmd /c java -jar E:\workspace\agentservices\search\target\search-1.0-SNAPSHOT.jar
+start cmd /c java -Dpinpoint.agentId=search1 -Dpinpoint.applicationName=search -javaagent:E:\workspace\apm\agent\target\pinpoint-agent-1.7.0-SNAPSHOT\pinpoint-bootstrap-1.7.0-SNAPSHOT.jar -jar E:\workspace\agentservices\search\target\search-1.0-SNAPSHOT.jar
