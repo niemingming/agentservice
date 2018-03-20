@@ -9,5 +9,5 @@ spring:
 server:
   port: 9000
 service:
-  author: localhost:9001/
-  search: localhost:9002/
+  author: http://localhost:9001
+  search: http://localhost:9002

@@ -7,7 +7,7 @@
 <body>
     <p th:text="${data}"></p>
     <form action="/searchDatas/">
-        <input type="hidden" th:value="${username}" />
+        <input type="hidden" th:value="${username}" name="username" />
         <input type="submit" value="查询"/>
     </form>
 </body>
