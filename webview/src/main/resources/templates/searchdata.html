@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>查询页面</title>
+</head>
+<body>
+    <p th:text="${data}"></p>
+    <form action="/searchDatas/">
+        <input type="hidden" th:value="${username}" />
+        <input type="submit" value="查询"/>
+    </form>
+</body>
+</html>

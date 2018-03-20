@@ -49,11 +49,12 @@ public class IndexController {
         String url = searchUrl + "/searchData/" + username;
         String res = restTemplate.getForEntity(url,String.class).getBody();
         model.addAttribute("data",res);
+        model.addAttribute("username",username);
     }
 
     /**
      * @description 校验登录状态
-     * @param [username]
+     * @param
      * @author nmm
      * @date 2018/3/20 14:41
      * @return boolean
