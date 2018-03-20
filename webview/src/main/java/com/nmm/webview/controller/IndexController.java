@@ -52,7 +52,7 @@ public class IndexController {
     }
 
     private void searchData(String username, Model model) {
-        String url = searchUrl + "/searchData/" + username;
+        String url = searchUrl + "/searchData/?username=" + username;
         String res = restTemplate.getForEntity(url,String.class).getBody();
         model.addAttribute("data",res);
         model.addAttribute("username",username);
