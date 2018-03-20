@@ -13,9 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
 
     private RestTemplate restTemplate = new RestTemplate();
-    @Value("#{service.author}")
+    @Value("${service.author}")
     private String authorUrl;
-    @Value("#{service.search}")
+    @Value("${service.search}")
     private String searchUrl;
 
     @RequestMapping("/")
