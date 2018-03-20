@@ -39,8 +39,8 @@ public class IndexController {
         searchData(username,model);
         return "searchdata";
     }
-    @RequestMapping("/searchDatas/{username}")
-    public String searchDatas(@PathVariable String username, Model model) {
+    @RequestMapping("/searchDatas")
+    public String searchDatas( String username, Model model) {
         Result res = checkLogin(username);
         if (!res.isSuccess()){
             model.addAttribute("msg",res.getMsg());
@@ -52,7 +52,7 @@ public class IndexController {
     }
 
     private void searchData(String username, Model model) {
-        String url = searchUrl + "/searchData/?username=" + username;
+        String url = searchUrl + "/searchData/" + username;
         String res = restTemplate.getForEntity(url,String.class).getBody();
         model.addAttribute("data",res);
         model.addAttribute("username",username);
